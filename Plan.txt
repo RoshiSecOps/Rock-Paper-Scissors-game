@@ -1,0 +1,14 @@
+This game will be entirely console based.
+
+Implementation plan/suggestions:
+
+1: Create a variable for the user choice
+2: Make a prompt for the variable to be inserted.
+3: Filter the variable, so it can be compared to possible options.
+4: Create a variable for the PC choice
+5: Create another variable for random int, which would be 1-3
+6: Fix each option for PC variable, example if randomINT = 3,
+PCvar = rock, etc.
+7: Create a variable to store the player score 
+8: Compare PlayerChoice and PCvar and create conditionals.
+9: Save scores and create an option to reset game.
