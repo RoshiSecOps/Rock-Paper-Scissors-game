@@ -12,8 +12,8 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let humanChoice = parseInt(prompt(`Please provde a number from 1 to 3
-        where 1 is Rock, 2 is Paper and 3 is Scissors`, ''));
+    let humanChoice = parseInt(prompt(`Please provde a number from 1 to 3, 
+    where 1 is Rock, 2 is Paper and 3 is Scissors`, ''));
     let playerChoice = (humanChoice == 1) ? 'Rock' :
     (humanChoice == 2) ? 'Paper' :
     (humanChoice == 3) ? 'Scissors' : 'Invalid choice, please choose 1, 2 or 3'
@@ -75,14 +75,12 @@ function playGame() {
                 console.log('Game Over!')
                 break;
             }else{
-                chooseQuit = prompt("Would you like to continue?(Yes(y) or No(n))",'')
+                chooseQuit = prompt('Enter "n" to quit, else we continue to next round','')
                 chooseQuit = (String(chooseQuit)).toLowerCase();
                 if (chooseQuit === 'n'){
                     break;
-                }else if(chooseQuit === 'y') {
+                }else{
                     continue;
-                }else {
-                    chooseQuit = prompt("Please provide an answer! (y or n)","")
                 }
             }
         }
