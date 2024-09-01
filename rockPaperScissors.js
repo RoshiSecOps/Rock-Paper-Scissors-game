@@ -3,6 +3,7 @@ let computerScore = 0;
 humanScore = Number(humanScore);
 computerScore = Number(computerScore);
 
+// Function to set the computer choice with a random value
 function getComputerChoice() {
     let pcNumber = Math.floor(Math.random()*10);
     //console.log(pcNumber)
@@ -11,6 +12,7 @@ function getComputerChoice() {
     return (pcChoice);
 }
 
+// Function to ask the player to choose
 function getHumanChoice() {
     let humanChoice = parseInt(prompt(`Please provde a number from 1 to 3, 
     where 1 is Rock, 2 is Paper and 3 is Scissors`, ''));
@@ -24,6 +26,7 @@ function getHumanChoice() {
         }
 }
 
+// Function to play a single round
 function playRound(human, computer) {
 
     if (human == 'Rock') {
@@ -62,6 +65,7 @@ function playRound(human, computer) {
     return humanScore && computerScore;
 }
 
+// Function to play 5 rounds
 function playGame() {
 /*    let humanScore = 0;
     let computerScore = 0;*/
