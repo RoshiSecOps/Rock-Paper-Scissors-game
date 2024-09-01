@@ -28,7 +28,7 @@ function playRound(human, computer) {
 
     if (human == 'Rock') {
         if (computer == 'Scissors') {
-            console.log (`You beat the computer it was using ${computer}`)
+            console.log (`${human} beats ${computer}, well done!`)
             humanScore += 1;
         }else if (computer == 'Rock') {
             console.log (`It's a tie ${human} ties ${computer}`)
@@ -39,7 +39,7 @@ function playRound(human, computer) {
     }
     else if (human == 'Paper') {
         if (computer == 'Rock') {
-            console.log (`You beat the computer it was using ${computer}`)
+            console.log (`${human} beats ${computer}, well done!`)
             humanScore += 1;
         }else if (computer == 'Paper') {
             console.log (`It's a tie ${human} ties ${computer}`)
@@ -49,7 +49,7 @@ function playRound(human, computer) {
         }
     }else if (human == 'Scissors') {
         if (computer == 'Paper') {
-            console.log (`You beat the computer it was using ${computer}`)
+            console.log (`${human} beats ${computer}, well done!`)
             humanScore += 1;
         }else if (computer == 'Scissors') {
             console.log (`It's a tie ${human} ties ${computer}`)
