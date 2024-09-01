@@ -59,8 +59,40 @@ function playRound(human, computer) {
         }
     }
     console.log(`Score is Player:${humanScore} and PC:${computerScore}`)
+    return humanScore && computerScore;
 }
-const human = getHumanChoice();
-const computer = getComputerChoice();
 
-playRound(human, computer);
+function playGame() {
+/*    let humanScore = 0;
+    let computerScore = 0;*/
+    //let roundNumber = Number();
+    for (let roundNumber = 1; roundNumber < 6; roundNumber++) {
+        console.log(`Starting round ${roundNumber}`);
+        let human = getHumanChoice();
+        let computer = getComputerChoice();
+        playRound(human, computer);
+            if (roundNumber == 5) {
+                console.log('Game Over!')
+                break;
+            }else{
+                chooseQuit = prompt("Would you like to continue?(Yes(y) or No(n))",'')
+                chooseQuit = (String(chooseQuit)).toLowerCase();
+                if (chooseQuit === 'n'){
+                    break;
+                }else if(chooseQuit === 'y') {
+                    continue;
+                }else {
+                    chooseQuit = prompt("Please provide an answer! (y or n)","")
+                }
+            }
+        }
+    if (humanScore > computerScore){
+        console.log(`You win ${humanScore}:${computerScore}`)
+    }else if (humanScore == computerScore){
+        console.log(`It's a tie ${humanScore}:${computerScore}`)
+    }else{
+        console.log(`You lose ${humanScore}:${computerScore}`)
+    }
+}
+
+playGame();
