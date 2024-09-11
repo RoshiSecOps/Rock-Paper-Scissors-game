@@ -31,6 +31,76 @@ function getComputerChoice() {
     return (pcChoice);
 }
 
+// Function to check score each round played 
+function checkScore() {
+    if (humanScore == 5) {
+        alert('Player wins!');
+        humanScore = 0;
+        computerScore = 0;
+        scorePara.textContent=(`Score is Player:${humanScore} and PC:${computerScore}`)
+    }else if (computerScore == 5) {
+        alert('Computer wins');
+        humanScore = 0;
+        computerScore = 0;
+        scorePara.textContent=(`Score is Player:${humanScore} and PC:${computerScore}`)
+    }else {
+        scorePara.textContent=(`Score is Player:${humanScore} and PC:${computerScore}`)
+        
+    }
+    return humanScore && computerScore
+}
+
+// Three separate functions for each button
+function playRoundRock(){
+    let human = 'Rock';
+    let computer = getComputerChoice();
+    if (computer == 'Scissors') {
+        console.log (`${human} beats ${computer}, well done!`)
+        humanScore += 1;
+    }else if (computer == 'Rock') {
+        console.log (`It's a tie ${human} ties ${computer}`)
+    }else {
+        console.log (`You lost with ${human} to ${computer}`);
+        computerScore += 1;
+    }
+    checkScore();
+}
+
+function playRoundPaper(){
+    let human = 'Rock';
+    let computer = getComputerChoice();
+    if (computer == 'Rock') {
+        console.log (`${human} beats ${computer}, well done!`)
+        humanScore += 1;
+    }else if (computer == 'Paper') {
+        console.log (`It's a tie ${human} ties ${computer}`)
+    }else {
+        console.log (`You lost with ${human} to ${computer}`);
+        computerScore += 1;
+    }
+    checkScore();
+}
+
+function playRoundScissors(){
+    let human = 'Scissors';
+    let computer = getComputerChoice();
+    if (computer == 'Paper') {
+        console.log (`${human} beats ${computer}, well done!`)
+        humanScore += 1;
+    }else if (computer == 'Scissors') {
+        console.log (`It's a tie ${human} ties ${computer}`)
+    }else {
+        console.log (`You lost with ${human} to ${computer}`);
+        computerScore += 1;
+    }
+    checkScore();
+}
+
+chooseRock.addEventListener('click', playRoundRock);
+choosePaper.addEventListener('click', playRoundPaper);
+chooseScissors.addEventListener('click', playRoundScissors);
+
+/*
 // Function to play a single round
 function playRound(human, computer) {
 
@@ -68,13 +138,7 @@ function playRound(human, computer) {
     }
     scorePara.textContent=(`Score is Player:${humanScore} and PC:${computerScore}`)
     return humanScore && computerScore;
-}
-
-chooseRock.addEventListener = ('click', playRound('Rock', getComputerChoice()));
-choosePaper.addEventListener = ('click', playRound('Paper', getComputerChoice()));
-chooseScissors.addEventListener = ('click', playRound('Scissors', getComputerChoice()));
-
-
+}*/
 /* Function to ask the player to choose
 function getHumanChoice() {
     let humanChoice = parseInt(prompt(`Please provde a number from 1 to 3, 
