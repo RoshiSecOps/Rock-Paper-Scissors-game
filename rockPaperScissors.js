@@ -32,20 +32,6 @@ function getComputerChoice() {
     return (pcChoice);
 }
 
-// Function to ask the player to choose
-function getHumanChoice() {
-    let humanChoice = parseInt(prompt(`Please provde a number from 1 to 3, 
-    where 1 is Rock, 2 is Paper and 3 is Scissors`, ''));
-    let playerChoice = (humanChoice == 1) ? 'Rock' :
-    (humanChoice == 2) ? 'Paper' :
-    (humanChoice == 3) ? 'Scissors' : 'Invalid choice, please choose 1, 2 or 3'
-    if (playerChoice == "Rock" || playerChoice == "Paper" || playerChoice == "Scissors"){
-        return (playerChoice);}
-        else{
-            return ("Invalid choice");
-        }
-}
-
 // Function to play a single round
 function playRound(human, computer) {
 
@@ -85,6 +71,25 @@ function playRound(human, computer) {
     return humanScore && computerScore;
 }
 
+chooseRock.addEventListener = ('click', playRound('Rock', getComputerChoice()));
+choosePaper.addEventListener = ('click', playRound('Paper', getComputerChoice()));
+chooseScissors.addEventListener = ('click', playRound('Scissors', getComputerChoice()));
+
+
+/* Function to ask the player to choose
+function getHumanChoice() {
+    let humanChoice = parseInt(prompt(`Please provde a number from 1 to 3, 
+    where 1 is Rock, 2 is Paper and 3 is Scissors`, ''));
+    let playerChoice = (humanChoice == 1) ? 'Rock' :
+    (humanChoice == 2) ? 'Paper' :
+    (humanChoice == 3) ? 'Scissors' : 'Invalid choice, please choose 1, 2 or 3'
+    if (playerChoice == "Rock" || playerChoice == "Paper" || playerChoice == "Scissors"){
+        return (playerChoice);}
+        else{
+            return ("Invalid choice");
+        }
+}*/
+
 // Function to play 5 rounds
 /*function playGame() {
 //    let humanScore = 0;
@@ -118,6 +123,3 @@ function playRound(human, computer) {
 } */
 //playGame();
 
-chooseRock.addEventListener = ('click', playRound('Rock', getComputerChoice()));
-choosePaper.addEventListener = ('click', playRound('Paper', getComputerChoice()));
-chooseScissors.addEventListener = ('click', playRound('Scissors', getComputerChoice()))
