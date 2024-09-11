@@ -17,7 +17,6 @@ chooseScissors.textContent = 'Scissors';
 const scorePara = document.createElement ('p');
 scorePara.textContent = `Score is Player:${humanScore} and PC:${computerScore}`;
 
-
 uiContainer.appendChild(chooseRock);
 uiContainer.appendChild(choosePaper);
 uiContainer.appendChild(chooseScissors);
