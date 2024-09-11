@@ -3,6 +3,25 @@ let computerScore = 0;
 humanScore = Number(humanScore);
 computerScore = Number(computerScore);
 
+const uiContainer = document.querySelector('.UI');
+
+const chooseRock = document.createElement('button');
+chooseRock.textContent = 'Rock';
+
+const choosePaper = document.createElement('button');
+choosePaper.textContent = 'Paper';
+
+const chooseScissors = document.createElement('button');
+chooseScissors.textContent = 'Scissors';
+
+const scorePara = document.createElement ('p');
+scorePara.textContent = `Score is Player:${humanScore} and PC:${computerScore}`
+
+uiContainer.appendChild(chooseRock);
+uiContainer.appendChild(choosePaper);
+uiContainer.appendChild(chooseScissors);
+uiContainer.appendChild(scorePara);
+
 // Function to set the computer choice with a random value
 function getComputerChoice() {
     let pcNumber = Math.floor(Math.random()*10);
@@ -97,4 +116,4 @@ function playGame() {
     }
 }
 
-playGame();
+//playGame();
