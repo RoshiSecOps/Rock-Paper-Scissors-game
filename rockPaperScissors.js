@@ -15,7 +15,8 @@ const chooseScissors = document.createElement('button');
 chooseScissors.textContent = 'Scissors';
 
 const scorePara = document.createElement ('p');
-scorePara.textContent = `Score is Player:${humanScore} and PC:${computerScore}`
+scorePara.textContent = `Score is Player:${humanScore} and PC:${computerScore}`;
+
 
 uiContainer.appendChild(chooseRock);
 uiContainer.appendChild(choosePaper);
@@ -80,14 +81,14 @@ function playRound(human, computer) {
             computerScore += 1;
         }
     }
-    console.log(`Score is Player:${humanScore} and PC:${computerScore}`)
+    scorePara.textContent=(`Score is Player:${humanScore} and PC:${computerScore}`)
     return humanScore && computerScore;
 }
 
 // Function to play 5 rounds
-function playGame() {
-/*    let humanScore = 0;
-    let computerScore = 0;*/
+/*function playGame() {
+//    let humanScore = 0;
+//    let computerScore = 0;
     //let roundNumber = Number();
     for (let roundNumber = 1; roundNumber < 6; roundNumber++) {
         console.log(`Starting round ${roundNumber}`);
@@ -114,6 +115,9 @@ function playGame() {
     }else{
         console.log(`You lose ${humanScore}:${computerScore}`)
     }
-}
-
+} */
 //playGame();
+
+chooseRock.addEventListener = ('click', playRound('Rock', getComputerChoice()));
+choosePaper.addEventListener = ('click', playRound('Paper', getComputerChoice()));
+chooseScissors.addEventListener = ('click', playRound('Scissors', getComputerChoice()))
